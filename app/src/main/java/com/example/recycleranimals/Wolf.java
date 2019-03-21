@@ -1,6 +1,6 @@
 package com.example.recycleranimals;
 
-public class Wolf extends GeneralAnimals {
+public class Wolf extends GeneralAnimals implements Runable, Wuo{
     private String voice;
     private String name;
     private int img;
@@ -42,7 +42,17 @@ public class Wolf extends GeneralAnimals {
 
     @Override
     int img() {
-        setImg(R.drawable.ic_launcher_web);
+        setImg(R.drawable.ic_launcher_account);
         return img;
+    }
+
+    @Override
+    public void run() {
+
+    }
+
+    @Override
+    public void wou() {
+
     }
 }

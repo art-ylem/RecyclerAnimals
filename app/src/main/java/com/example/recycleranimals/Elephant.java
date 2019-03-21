@@ -42,7 +42,7 @@ public class Elephant extends GeneralAnimals {
 
     @Override
     int img() {
-        setImg(R.drawable.ic_launcher_web);
+        setImg(R.drawable.ic_launcher_account);
         return img;
     }
 }

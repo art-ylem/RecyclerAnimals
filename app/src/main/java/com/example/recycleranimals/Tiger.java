@@ -1,8 +1,25 @@
 package com.example.recycleranimals;
 
-public class Tiger extends GeneralAnimals {
+import java.util.Objects;
+
+public class Tiger extends GeneralAnimals implements Runable {
     private String voice;
     private String name;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Tiger)) return false;
+        Tiger tiger = (Tiger) o;
+        return img == tiger.img &&
+                Objects.equals(voice, tiger.voice) &&
+                Objects.equals(name, tiger.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(voice, name, img);
+    }
 
     public String getName() {
         return name;
@@ -43,7 +60,12 @@ public class Tiger extends GeneralAnimals {
 
     @Override
     int img() {
-        setImg(R.drawable.ic_launcher_web);
+        setImg(R.drawable.ic_launcher_account);
         return img;
+    }
+
+    @Override
+    public void run() {
+
     }
 }

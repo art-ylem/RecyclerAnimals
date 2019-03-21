@@ -21,6 +21,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public RecyclerViewAdapter(ArrayList<GeneralAnimals> generalArray, Context context) {
         this.generalArray = generalArray;
         this.context = context;
+        this.mInflater = LayoutInflater.from(context);
     }
 
     @NonNull
@@ -41,8 +42,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         viewHolder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if(viewHolder.name. = str) Надо сделать проверку на текст!
-                viewHolder.name.setText(strVoice);
+                if(viewHolder.name.getText().toString().equals(str)) {
+                    viewHolder.button.setText("Show voice");
+                    viewHolder.name.setText(strVoice);
+                } else{
+                    viewHolder.name.setText(str);
+                    viewHolder.button.setText("Show name");
+
+                }
             }
         });
     }
